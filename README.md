@@ -6,7 +6,7 @@ This is a template Flutter app I built using [Flutter](https://flutter.dev/) and
 
 To use this template Flutter app, follow these steps:
 
-1. Clone this repository to your local machine using `git clone https://github.com/UcGeorge/your-repository-name.git`
+1. Clone this repository to your local machine using `git clone https://github.com/UcGeorge/flutter-app-template.git`
 2. Run `flutter pub get` to install the app's dependencies.
 3. Add firebase to the flutter app. Follow the instructions [here](https://firebase.google.com/docs/flutter/setup)
 4. Visit the [pubspec.yaml](pubspec.yaml) file, and edit the configurations for [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) & [flutter_native_splash](https://pub.dev/packages/flutter_native_splash) as you see fit.
