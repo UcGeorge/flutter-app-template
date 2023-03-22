@@ -78,10 +78,10 @@ class MyApp extends StatelessWidget {
       },
       child: const AlertWrapper(
         app: MaterialApp(
-          title: 'Truth.io',
+          title: 'Flutter App Template',
           debugShowCheckedModeBanner: false,
           home: CounterPage(
-            title: "Uche's Flutter Template",
+            title: "Flutter App Template",
           ),
         ),
       ),
