@@ -1,4 +1,4 @@
-# Uche's Flutter Template
+# Flutter App Template
 
 This is a template Flutter app I built using [Flutter](https://flutter.dev/) and [Dart](https://dart.dev/) programming language. It is designed to be used as a starting point for developing new Flutter apps, showcasing best practices for architecture, design, and functionality.
 
