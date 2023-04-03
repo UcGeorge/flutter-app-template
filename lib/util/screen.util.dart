@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+
 class ScreenUtil {
   static Size screenSize(BuildContext context) => MediaQuery.of(context).size;
 
@@ -11,6 +12,9 @@ class ScreenUtil {
 
   static EdgeInsets screenViewPadding(BuildContext context) =>
       MediaQuery.of(context).viewPadding;
+
+  static EdgeInsets screenViewInsets(BuildContext context) =>
+      MediaQuery.of(context).viewInsets;
 
   static void showLoadingView(BuildContext context, String message) {
     showDialog(

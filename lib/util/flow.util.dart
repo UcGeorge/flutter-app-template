@@ -7,6 +7,8 @@ class FlowUtil {
     required BuildContext context,
     required Widget page,
     String? name,
+    Color? barrierColor,
+    bool opaque = true,
     FlowTransition transition = FlowTransition.cupertino,
     Duration? transitionDuration,
   }) {
@@ -15,6 +17,8 @@ class FlowUtil {
         transition,
         page: page,
         name: name,
+        opaque: opaque,
+        barrierColor: barrierColor,
         transitionDuration: transitionDuration,
       ),
     );
@@ -24,6 +28,8 @@ class FlowUtil {
     required BuildContext context,
     required Widget page,
     String? name,
+    Color? barrierColor,
+    bool opaque = true,
     FlowTransition transition = FlowTransition.cupertino,
     Duration? transitionDuration,
   }) {
@@ -32,6 +38,8 @@ class FlowUtil {
         transition,
         page: page,
         name: name,
+        opaque: opaque,
+        barrierColor: barrierColor,
         transitionDuration: transitionDuration,
       ),
       (route) => false,
@@ -42,6 +50,8 @@ class FlowUtil {
     required BuildContext context,
     required Widget page,
     String? name,
+    Color? barrierColor,
+    bool opaque = true,
     FlowTransition transition = FlowTransition.cupertino,
     Duration? transitionDuration,
   }) {
@@ -50,6 +60,8 @@ class FlowUtil {
         transition,
         page: page,
         name: name,
+        opaque: opaque,
+        barrierColor: barrierColor,
         transitionDuration: transitionDuration,
       ),
     );
@@ -78,6 +90,8 @@ class FlowUtil {
     FlowTransition transition, {
     required Widget page,
     String? name,
+    bool opaque = true,
+    Color? barrierColor,
     Duration? transitionDuration,
   }) {
     switch (transition) {
@@ -89,18 +103,24 @@ class FlowUtil {
         return _fadeRoute<T>(
           page: page,
           name: name,
+          opaque: opaque,
+          barrierColor: barrierColor,
           transitionDuration: transitionDuration,
         );
       case FlowTransition.slide:
         return _slideRoute<T>(
           page: page,
           name: name,
+          opaque: opaque,
+          barrierColor: barrierColor,
           transitionDuration: transitionDuration,
         );
       case FlowTransition.scale:
         return _scaleRoute<T>(
           page: page,
           name: name,
+          opaque: opaque,
+          barrierColor: barrierColor,
           transitionDuration: transitionDuration,
         );
     }
@@ -123,12 +143,16 @@ class FlowUtil {
   static Route<T> _slideRoute<T>({
     required Widget page,
     String? name,
+    Color? barrierColor,
+    bool opaque = true,
     Duration? transitionDuration,
   }) {
     return PageRouteBuilder<T>(
       settings: RouteSettings(name: name),
       transitionDuration: transitionDuration ?? 300.ms,
       pageBuilder: (context, animation, secondaryAnimation) => page,
+      barrierColor: barrierColor,
+      opaque: opaque,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(1.0, 0.0);
         const end = Offset.zero;
@@ -148,12 +172,16 @@ class FlowUtil {
   static Route<T> _scaleRoute<T>({
     required Widget page,
     String? name,
+    Color? barrierColor,
+    bool opaque = true,
     Duration? transitionDuration,
   }) {
     return PageRouteBuilder<T>(
       settings: RouteSettings(name: name),
       transitionDuration: transitionDuration ?? 300.ms,
       pageBuilder: (context, animation, secondaryAnimation) => page,
+      barrierColor: barrierColor,
+      opaque: opaque,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = 0.0;
         const end = 1.0;
@@ -173,12 +201,16 @@ class FlowUtil {
   static Route<T> _fadeRoute<T>({
     required Widget page,
     String? name,
+    Color? barrierColor,
+    bool opaque = true,
     Duration? transitionDuration,
   }) {
     return PageRouteBuilder<T>(
       settings: RouteSettings(name: name),
       transitionDuration: transitionDuration ?? 300.ms,
       pageBuilder: (context, animation, secondaryAnimation) => page,
+      barrierColor: barrierColor,
+      opaque: opaque,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = 0.0;
         const end = 1.0;
